@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20 Gradient Cards</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: #0b0b0b;
+            display: flex;
+            justify-content: center;
+            overflow-x: auto;
+        }
+
+        .main-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+            padding: 2em;
+            justify-content: center;
+        }
+
+        .card-container {
+            position: relative;
+            border-radius: 2em;
+            width: 18rem;
+            aspect-ratio: 4 / 5;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: linear-gradient(135deg, orange, deepskyblue);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 1em;
+        }
+
+        .card-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 140, 0, 0.7), 0 0 50px rgba(0, 191, 255, 0.7);
+        }
+
+        .card-title {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        .card-tag {
+            font-size: 0.9em;
+            background: rgba(0, 0, 0, 0.3);
+            color: #fff;
+            padding: 0.2em 0.5em;
+            border-radius: 1em;
+            align-self: flex-start;
+            margin-bottom: 0.5em;
+        }
+
+        .card-desc {
+            font-size: 0.95em;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 0.5em;
+        }
+
+        .download-btn {
+            background-color: rgba(255, 140, 0, 0.8);
+            color: white;
+            border: none;
+            border-radius: 0.8em;
+            padding: 0.5em 1em;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background-color: rgba(0, 191, 255, 0.9);
+            box-shadow: 0 0 15px rgba(0, 191, 255, 0.7);
+        }
+
+        @media (max-width: 600px) {
+            .card-container {
+                width: 90%;
+                aspect-ratio: 3 / 4;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="main-container"></main>
+
+    <script>
+        const cardsData = [
+            {
+                title:"الثقب الاسود",
+                description:"ثقب يعمل بجميع فيزياىيته ",
+                tag: "1", 
+                download: "https://www.dropbox.com/scl/fo/20q9g27wplmwra9v67t7s/ADpQ5rjKBDAMDSt60wuTqsE?rlkey=fmyndn1grqwlm16ax2qtb106d&st=0ios6bub&dl=1",
+                color1: "rgba(255,140,0,0.8)", 
+                color2: "rgba(0,191,255,0.8)"   
+            },
+            {
+                title: "مجرة ثلاثيه الابعاد",
+                description: "مجره ثلاثية الابعاد",
+                tag: "2",
+                download: "https://www.dropbox.com/scl/fo/sjkyooi5g37anmmwnwcj9/AB-Gk13ovjxL3yE0gZu0WQk?rlkey=xi3378y0jtridcbjtgfu4wngk&st=g22r6kx7&dl=1",
+                color1: "rgba(255,165,0,0.8)",
+                color2: "rgba(30,144,255,0.8)"
+            },
+            {
+                title:"مشاريع مبعثره",
+                description:"خذه الي تبيه منهم ",
+                tag: "3", 
+                download: "https://www.dropbox.com/scl/fo/r5bt6x8qnk3qgydxv9oxu/APaCnaJg_OGo4Mzpx3j2qlk?rlkey=jqm4ulwu42hceamzuv367wjld&st=iq35hhcm&dl=1",
+                color1: "rgba(255,140,0,0.8)", 
+                color2: "rgba(0,191,255,0.8)"   
+            },
+            {
+                title:"مجره ثلاثية الابعاد 3دي",
+                description:"مجره ثلاثية الابعاد 3دي",
+                tag: "4", 
+                download: "https://www.dropbox.com/scl/fo/8kagg526p3e9uvi63t67f/AAFznwIm3bsU941EIMZRBpw?rlkey=xd0b44fjg6qvy3z9m5przyawb&st=okoihh2m&dl=",
+                color1: "rgba(255,140,0,0.8)", 
+                color2: "rgba(0,191,255,0.8)"   
+            },
+            {
+                title:"ملفات مبعثره",
+                description:"خذ الي تبيه وعدل عليه",
+                tag: "5", 
+                download: "https://www.dropbox.com/scl/fo/76q8q16qdjps2wm0irmr3/ANJm0i4gFbubLoVAXstwXsU?rlkey=upev4uxqjztck5uhp7wq0uxw1&st=pp8yc3fx&dl=1",
+                color1: "rgba(255,140,0,0.8)", 
+                color2: "rgba(0,191,255,0.8)"   
+            },
+
+            
+        ];
+
+
+        const container = document.querySelector('.main-container');
+        cardsData.forEach(data => {
+            const card = document.createElement('div');
+            card.className = 'card-container';
+            card.style.background = `linear-gradient(135deg, ${data.color1}, ${data.color2})`;
+            card.innerHTML = `
+        <div class="card-tag">${data.tag}</div>
+        <div class="card-title">${data.title}</div>
+        <div class="card-desc">${data.description}</div>
+        <a href="${data.download}" class="download-btn" download>تنزيل</a>
+    `;
+            container.appendChild(card);
+        });
+    </script>
+</body>
+
+</html>
