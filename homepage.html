@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdullah's Projects</title>
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            color: white;
+            font-style: oblique;
+            font-weight: 800;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            background-color: red;
+            flex-wrap: wrap;
+        }
+
+        header h2 {
+            padding: 25px 15px;
+            border-bottom: 4px solid orange;
+            border-right: 4px solid blue;
+        }
+
+        header ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            padding: 25px 15px;
+            font-size: 18px;
+           
+            flex-wrap: wrap;
+        }
+
+        header ul li {
+            margin: 0 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            transition: 0.3s ease;
+        }
+
+        a:hover {
+            background-color: black;
+            border-radius: 10px;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            header ul {
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+            }
+
+            header ul li {
+                margin: 5px 0;
+            }
+        }
+
+        /* Welcome Section */
+        .wlcome {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+        }
+
+        .welcome {
+            font-size: 2rem;
+            font-weight: bold;
+            border-right: 3px solid #f1c40f;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 22ch;
+            animation: typing 4s steps(22) infinite alternate, blink 0.7s infinite;
+            text-align: center;
+            color: orange;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 22ch;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        /* Table Section */
+        .tabl {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 90%;
+            max-width: 800px;
+            background-color: #222;
+            color: white;
+        }
+
+        th,
+        td {
+            border: 1px solid orange;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: red;
+        }
+
+        tr:hover {
+            background-color: #333;
+        }
+
+        /* Footer */
+        footer {
+            background-color: red;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-weight: bold;
+            margin-top: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h2>Abdullah Projects</h2>
+        <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="sing-in4.html">Sign in</a></li>
+            <li><a href="omg.html">Project</a></li>
+        </ul>
+    </header>
+
+    <!-- Welcome Section -->
+    <div class="wlcome">
+        <h2 class="welcome">Welcome to My Projects</h2>
+    </div>
+
+    <!-- Table Section -->
+    <div class="tabl">
+        <table>
+            <thead>
+                <tr>
+                    <th>اسم المشروع</th>
+                    <th>رابط المشروع</th>
+                    <th>تاريخ الإنجاز</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>صفحة الفيس بوك</td>
+                    <td><a href="https://www.facebook.com/abdullah.al.sinjilawi">Facebook</a></td>
+                    <td>2/8/2025</td>
+                </tr>
+                <tr>
+                    <td>مستودع القيتهب</td>
+                    <td><a href="#">Github</a></td>
+                    <td>10/10/2023</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2025 عبدالله. كل الحقوق محفوظة.
+    </footer>
+
+</body>
+
+</html>
